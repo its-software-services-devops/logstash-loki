@@ -7,6 +7,6 @@ RUN gem install dalli -v 3.2.0
 #RUN sed -i 's/jruby-openssl (0.11.0-java)/jruby-openssl (0.14.0-java)/g' /usr/share/logstash/Gemfile.lock
 #RUN bundle update
 
-RUN logstash-plugin install --version v1.0.0 logstash-output-google_pubsub
+RUN logstash-plugin install --version 1.0.0 logstash-output-google_pubsub
 
 RUN echo $(date) > /tmp/date.txt
