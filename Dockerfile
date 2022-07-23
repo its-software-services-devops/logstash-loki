@@ -4,10 +4,12 @@ FROM logstash:8.3.2
 
 USER root
 
-RUN apt-get install rubygems ruby-dev
+RUN apt-get --assume-yes install rubygems ruby-dev
+RUN gem install dalli
+
 RUN logstash-plugin install logstash-output-loki
 RUN logstash-plugin install logstash-output-google_pubsub
 
-RUN gem install dalli
+USER logstash
 
 RUN echo $(date) > /tmp/date.txt
