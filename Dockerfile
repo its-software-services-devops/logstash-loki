@@ -9,6 +9,7 @@ RUN gem install dalli
 
 RUN logstash-plugin install logstash-output-loki
 RUN logstash-plugin install logstash-output-google_pubsub
+RUN logstash-plugin install logstash-input-google_pubsub
 
 USER logstash
 
