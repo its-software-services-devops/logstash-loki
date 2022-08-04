@@ -4,6 +4,8 @@ FROM logstash:8.3.2
 
 USER root
 
+RUN git
+
 RUN logstash-plugin install logstash-input-google_pubsub # Not work, runtime error
 
 RUN apt-get --assume-yes install rubygems ruby-dev
