@@ -6,6 +6,7 @@ USER root
 
 RUN logstash-plugin install logstash-input-google_pubsub # Not work, runtime error
 
+RUN sudo apt update
 RUN apt-get --assume-yes install rubygems ruby-dev
 RUN gem install dalli
 
