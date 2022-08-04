@@ -6,8 +6,12 @@ ENV SSL_CERT_FILE /opt/logstash/logstash-core/lib/logstash/certs/cacert.pem
 
 RUN logstash-plugin remove x-pack
 RUN logstash-plugin install logstash-input-google_pubsub
-RUN logstash-plugin install logstash-output-loki
+#RUN logstash-plugin install logstash-output-loki
 RUN logstash-plugin install logstash-output-google_pubsub
+
+RUN apt-get --assume-yes install rubygems ruby-dev
+RUN gem install dalli
+
 
 #FROM bitnami/logstash:8.3.3
 
@@ -15,7 +19,6 @@ RUN logstash-plugin install logstash-output-google_pubsub
 
 #USER root
 
-#RUN logstash-plugin remove x-pack
 #RUN logstash-plugin install logstash-input-google_pubsub # Not work, runtime error
 
 #RUN apt-get --assume-yes install rubygems ruby-dev
