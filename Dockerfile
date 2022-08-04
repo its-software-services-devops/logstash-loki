@@ -8,7 +8,7 @@ RUN logstash-plugin install logstash-input-google_pubsub # Not work, runtime err
 
 RUN apt-get update
 RUN apt-get --assume-yes install rubygems ruby-dev
-RUN gem install dalli
+RUN gem install dalli -v 3.2.0
 
 RUN logstash-plugin install logstash-output-loki
 RUN logstash-plugin install logstash-output-google_pubsub
