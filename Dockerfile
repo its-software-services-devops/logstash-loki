@@ -5,6 +5,7 @@ USER root
 RUN apt-get update
 RUN apt-get --assume-yes install rubygems ruby-dev
 RUN gem install dalli
+RUN gem install pg
 
 RUN logstash-plugin install logstash-output-loki
 RUN logstash-plugin install logstash-output-google_pubsub
