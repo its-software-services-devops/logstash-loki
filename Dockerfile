@@ -3,7 +3,7 @@ FROM logstash:8.3.2
 USER root
 
 RUN apt-get update
-RUN apt-get --assume-yes install rubygems ruby-dev libpq-dev
+RUN apt-get --assume-yes install rubygems ruby-dev build-essential libpq-dev
 
 RUN gem install dalli
 RUN gem install pg -- --with-pg-lib=/usr/lib
