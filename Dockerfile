@@ -11,6 +11,7 @@ RUN gem install pg -- --with-pg-lib=/usr/lib
 RUN logstash-plugin install logstash-output-loki
 RUN logstash-plugin install logstash-output-google_pubsub
 RUN logstash-plugin install logstash-input-google_pubsub # Not work, runtime error
+RUN logstash-plugin install logstash-output-syslog
 
 USER logstash
 
